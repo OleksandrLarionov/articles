@@ -4,6 +4,7 @@ import './App.css';
 import NavArt from './components/NavArt';
 import ArticleCall from './components/ArticleCall';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TheArticle from './components/TheArticle';
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<NavArt />
 				<Routes>
 					<Route element={<ArticleCall />} path='/' />
+					<Route element={<TheArticle />} path='/:articleId' />
 				</Routes>
 			</Container>{' '}
 		</BrowserRouter>

@@ -2,10 +2,8 @@ import { useEffect, useState } from 'react';
 import Article from '../interfaces/article';
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import SingleArticle from './SingleArticle';
-import { useParams } from 'react-router-dom';
 const ArticleCall = () => {
 	const [article, setArticle] = useState<Article[]>([]);
-	const params = useParams();
 	useEffect(() => {
 		myArticledata();
 	}, []);
@@ -31,7 +29,7 @@ const ArticleCall = () => {
 					<h2>News</h2>
 					<ListGroup>
 						{article.map((article, i) => {
-							return <SingleArticle key={article.id} artic={article} />;
+							return <SingleArticle key={article.id} articleDetails={article} />;
 						})}
 					</ListGroup>
 				</Col>
